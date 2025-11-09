@@ -4,7 +4,7 @@ This repository contains the source code for my personal portfolio website, host
 
 ## About
 
-This is a single-page application built with vanilla HTML, CSS, and JavaScript. It showcases my projects, skills, and experience as a full-stack developer.
+This is a single-page application built with vanilla HTML, CSS, and JavaScript. It showcases my projects, skills, and experience as a web app developer.
 
 ## Features
 
