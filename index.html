@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nash Ang - Full-Stack Developer specializing in DevOps, frontend development, and production infrastructure. Trained at CCSF, Bay Valley Tech, and freeCodeCamp.">
+    <meta name="keywords" content="Nash Ang, full-stack developer, DevOps engineer, frontend developer, web developer, Docker, Python, JavaScript, portfolio">
+    <meta name="author" content="Nash Ang">
+    <meta property="og:title" content="Nash Ang - Full-Stack Developer & Technical Founder">
+    <meta property="og:description" content="Full-Stack Developer combining formal training with hands-on production experience. DevOps, Frontend, Mobile Development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://subtleazn.github.io">
+    <title>Nash Ang - Full-Stack Developer | DevOps & Frontend Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #8b5cf6;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        header {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .hero .description {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-item .label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: var(--text);
+        }
+
+        .project-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .project-meta {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .project-section {
+            margin: 1.5rem 0;
+        }
+
+        .project-section h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: var(--bg);
+            border-left: 3px solid var(--primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            color: var(--text-light);
+            border: 1px solid var(--border);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.2s;
+            font-size: 0.875rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+        }
+
+        .skill-category li::before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .education-card {
+            position: relative;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--bg);
+        }
+
+        .education-card h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .education-meta {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+
+        .education-card li {
+            padding: 0.25rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .education-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .about-content strong {
+            color: var(--text);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .contact-item h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--text-light);
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                gap: 1.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid var(--border);
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .skills-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-timeline {
+                padding-left: 1.5rem;
+            }
+
+            .education-card::before {
+                left: -2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Nash Ang</a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Full-Stack Developer &<br>Technical Founder</h1>
+        <p class="subtitle">Combining formal training with hands-on production experience</p>
+        <p class="description">Trained at City College of San Francisco, Bay Valley Tech, and freeCodeCamp. Currently running production infrastructure serving 136K+ users while seeking full-stack developer opportunities.</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="number">7</div>
+                <div class="label">Production Apps Deployed</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">3</div>
+                <div class="label">Formal Training Programs</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">136K+</div>
+                <div class="label">Community Served</div>
+            </div>
+        </div>
+
+        <div class="hero-cta">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Self-Hosted Production Infrastructure</h3>
+                <span class="project-badge">Live Production</span>
+            </div>
+            <p class="project-meta">DevOps Engineering • 2024-Present</p>
+            
+            <p>Applied DevOps concepts from freeCodeCamp to deploy and manage 7 production applications serving real users for PinoySeoul Media—a Korean-Filipino cultural platform with 136K+ community members.</p>
+
+            <div class="highlight-box">
+                <strong>Real-World Business Impact:</strong><br>
+                Reduced operational costs by 82% (from $1,380/yr to $240/yr) while maintaining full control over infrastructure. Zero downtime achieved through proper container orchestration and automated SSL management.
+            </div>
+
+            <div class="project-section">
+                <h4>Technical Implementation</h4>
+                <p>• Docker Compose for multi-container orchestration (7 applications)<br>
+                   • Nginx reverse proxy with automated SSL via Let's Encrypt<br>
+                   • Centralized container management with Portainer<br>
+                   • DNS routing for 7 subdomains with automated certificate renewal<br>
+                   • Backup automation and monitoring systems</p>
+            </div>
+
+            <div class="project-section">
+                <h4>Production Stack</h4>
+                <p><strong>AzuraCast:</strong> 24/7 radio streaming & automation<br>
+                   <strong>Dolibarr:</strong> Business management (CRM, invoicing, HR)<br>
+                   <strong>FileBrowser:</strong> Internal file hosting<br>
+                   <strong>Kimai:</strong> Time tracking for billing<br>
+                   <strong>Focalboard:</strong> Content calendar & project management<br>
+                   <strong>Portainer:</strong> Docker control panel<br>
+                   <strong>Nginx Proxy Manager:</strong> Domain routing & SSL</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Docker Compose</span>
+                <span class="tech-tag">Linux (Ubuntu)</span>
+                <span class="tech-tag">Nginx</span>
+                <span class="tech-tag">SSL/TLS</span>
+                <span class="tech-tag">Azure VM</span>
+                <span class="tech-tag">Bash</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://radio.pinoyseoul.com" class="btn" target="_blank">Live Radio</a>
+                <a href="https://github.com/pinoyseoul/pinoyseoul-devops" class="btn btn-secondary" target="_blank">GitHub Repository</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>PinoySeoul Infrastructure Monitor</h3>
+                <span class="project-badge">ChatOps</span>
+            </div>
+            <p class="project-meta">DevOps Automation • 2024</p>
+            
+            <p>Developed a robust, self-hosted monitoring and alerting service for PinoySeoul Media Enterprise. Proactively monitors critical services like Docker containers, SSL certificates, and daily backups, instantly notifying the team via Google Chat when issues arise.</p>
+
+            <div class="highlight-box">
+                <strong>Real-World Problem Solved:</strong><br>
+                Eliminated manual infrastructure checks by automating monitoring of 7 production services. Team receives instant Google Chat alerts for any issues, enabling quick response and minimizing downtime for 136K+ users.
+            </div>
+
+            <div class="project-section">
+                <h4>Technical Implementation</h4>
+                <p>• Python-based monitoring daemon running in Docker<br>
+                   • Docker API integration to check container health status<br>
+                   • SSL certificate expiration monitoring (30-day warnings)<br>
+                   • Automated backup verification system<br>
+                   • Google Chat webhook integration for real-time alerts<br>
+                   • Scheduled checks with configurable intervals<br>
+                   • Graceful error handling and retry logic</p>
+            </div>
+
+            <div class="project-section">
+                <h4>Key Features</h4>
+                <p>• Monitors Docker containers for running status<br>
+                   • SSL certificate expiration tracking and alerts<br>
+                   • Daily backup verification (checks if backups completed)<br>
+                   • Instant Google Chat notifications with detailed status<br>
+                   • Containerized deployment for easy management<br>
+                   • Designed for reliability and ease of use</p>
+            </div>
+
+            <div class="project-section">
+                <h4>Business Impact</h4>
+                <p>Ensures digital infrastructure runs smoothly, empowering cultural exchange through 24/7 streaming, creator partnerships, and AI-powered content. Reduces manual monitoring time and enables faster incident response.</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">DevOps</span>
+                <span class="tech-tag">Google Chat Webhooks</span>
+                <span class="tech-tag">Automation</span>
+                <span class="tech-tag">Monitoring</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/pinoyseoul/pinoyseoul-monitor" class="btn" target="_blank">View Project</a>
+                <a href="https://github.com/pinoyseoul/pinoyseoul-monitor" class="btn btn-secondary" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Professional Portfolio Website</h3>
+                <span class="project-badge">Live</span>
+            </div>
+            <p class="project-meta">Frontend Development • 2024</p>
+            
+            <p>Designed and developed mobile-first portfolio website applying web development principles from City College of San Francisco. Showcases technical projects while demonstrating modern frontend capabilities.</p>
+
+            <div class="project-section">
+                <h4>Technical Approach</h4>
+                <p>• Mobile-first responsive design with CSS Grid and Flexbox<br>
+                   • Semantic HTML5 for accessibility and SEO optimization<br>
+                   • Vanilla JavaScript for performance (no framework bloat)<br>
+                   • Smooth scrolling navigation and mobile menu<br>
+                   • Fast loading times optimized for global audience<br>
+                   • Deployed via GitHub Pages with custom domain</p>
+            </div>
+
+            <div class="project-section">
+                <h4>Design Principles</h4>
+                <p>• Clean, professional aesthetic prioritizing readability<br>
+                   • Accessible design following WCAG 2.1 AA guidelines<br>
+                   • Content-first approach highlighting projects and skills<br>
+                   • Consistent visual hierarchy and spacing<br>
+                   • Optimized for both technical recruiters and developers</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">CSS Grid</span>
+                <span class="tech-tag">Flexbox</span>
+                <span class="tech-tag">GitHub Pages</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/subtleazn/subtleazn.github.io" class="btn btn-secondary" target="_blank">Source Code</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>PinoySeoul.com Media Platform</h3>
+                <span class="project-badge">Live Platform</span>
+            </div>
+            <p class="project-meta">Technical Founder • 2017-Present</p>
+            
+            <p>Founded and built Korean-Filipino cultural media platform serving 136,000+ community members. Responsible for technical infrastructure, content strategy, and community management.</p>
+
+            <div class="highlight-box">
+                <strong>Entrepreneurial Experience:</strong><br>
+                Demonstrates ability to identify market needs, build technical solutions, and maintain production systems while managing real users and stakeholders. Experience includes event production, partnerships, and sustainable operations.
+            </div>
+
+            <div class="project-section">
+                <h4>Platform Components</h4>
+                <p>• 24/7 radio streaming platform (AzuraCast)<br>
+                   • Content management system for bilingual articles<br>
+                   • Mobile application (Android)<br>
+                   • EPS-TOPIK Online community (136K+ members)<br>
+                   • Multiple production tools for business operations</p>
+            </div>
+
+            <div class="project-section">
+                <h4>Key Achievements</h4>
+                <p>• Organized major cultural events (2019 film festival, creator conferences)<br>
+                   • Established partnerships with major brands (Disney+, BENCH, Wilbros)<br>
+                   • Built sustainable community serving Filipino workers in Korea<br>
+                   • Transitioned fully to self-hosted infrastructure (2024)</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">WordPress</span>
+                <span class="tech-tag">AzuraCast</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Community Management</span>
+                <span class="tech-tag">Content Strategy</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://pinoyseoul.com" class="btn" target="_blank">Visit Site</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Frontend Development</h3>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Responsive Design (Mobile-First)</li>
+                    <li>CSS Grid & Flexbox</li>
+                    <li>UI/UX Design Principles</li>
+                    <li>Web Accessibility (WCAG)</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>DevOps & Infrastructure</h3>
+                <ul>
+                    <li>Linux System Administration</li>
+                    <li>Docker & Containerization</li>
+                    <li>Nginx Web Server & Reverse Proxy</li>
+                    <li>SSL/TLS Certificate Management</li>
+                    <li>Cloud Deployment (Azure)</li>
+                    <li>Bash Scripting & Automation</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Mobile Development</h3>
+                <ul>
+                    <li>Android Studio</li>
+                    <li>Java Programming</li>
+                    <li>WebView Integration</li>
+                    <li>Mobile UI/UX Design</li>
+                    <li>API Integration</li>
+                    <li>Google Play Store Deployment</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Tools & Workflow</h3>
+                <ul>
+                    <li>Git & GitHub</li>
+                    <li>VS Code</li>
+                    <li>Command Line Interface</li>
+                    <li>Figma & Adobe XD</li>
+                    <li>Chrome DevTools</li>
+                    <li>Project Management Tools</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education & Training</h2>
+        <div class="education-timeline">
+            <div class="education-card">
+                <h3>Bay Valley Tech Code Academy</h3>
+                <p class="education-meta">Digital Design Bootcamp • 2024</p>
+                <ul>
+                    <li>Completed intensive 12-week UI/UX design program</li>
+                    <li>User research, persona development, and usability testing</li>
+                    <li>Wireframing, prototyping, and high-fidelity mockups</li>
+                    <li>Design systems and component libraries</li>
+                    <li>Figma and Adobe XD proficiency</li>
+                    <li>Capstone: Full design process from research to production</li>
+                </ul>
+            </div>
+
+            <div class="education-card">
+                <h3>City College of San Francisco</h3>
+                <p class="education-meta">Web Application Development • 2023-2024</p>
+                <ul>
+                    <li>Full-stack web development fundamentals</li>
+                    <li>HTML, CSS, JavaScript, and modern frameworks</li>
+                    <li>Database design, SQL, and API integration</li>
+                    <li>Software engineering principles and best practices</li>
+                    <li>Version control with Git and GitHub</li>
+                    <li>Responsive web design and mobile-first development</li>
+                </ul>
+            </div>
+
+            <div class="education-card">
+                <h3>freeCodeCamp</h3>
+                <p class="education-meta">DevOps Course • 2024</p>
+                <ul>
+                    <li>Linux system administration and command line</li>
+                    <li>Docker containerization and orchestration</li>
+                    <li>CI/CD pipeline fundamentals</li>
+                    <li>Infrastructure as Code concepts</li>
+                    <li>Cloud deployment strategies</li>
+                    <li>Hands-on projects: Multi-container production deployments</li>
+                </ul>
+            </div>
+
+            <div class="education-card">
+                <h3>Previous Education</h3>
+                <p class="education-meta">Philippines & South Korea</p>
+                <ul>
+                    <li>Mass Communication degree (Philippines)</li>
+                    <li>Former scholar at Korea National University of Arts</li>
+                    <li>Cultural bridge-building and bilingual communication</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p><strong>The Technical Builder with Cultural Context</strong></p>
+            
+            <p>I'm a full-stack developer who combines formal technical training with hands-on production experience. My background in Mass Communication and Korean cultural studies gives me a unique perspective on user experience and global digital communication.</p>
+            
+            <p><strong>The Journey:</strong> Founded PinoySeoul.com in 2017 to serve the Filipino community in Korea. As the platform grew to 136K+ users, I recognized the need to deeply understand the technology powering it. This led me to formal education at City College of San Francisco and Bay Valley Tech, supplemented by intensive self-study through freeCodeCamp.</p>
+            
+            <p><strong>What I Bring:</strong> The rare combination of entrepreneurial thinking and technical execution. I understand both business requirements and technical constraints because I've lived both sides—founding a platform, serving real users, managing stakeholders, while also deploying servers, writing code, and debugging production issues at 2 AM.</p>
+            
+            <p><strong>Current Focus:</strong> Maintaining production infrastructure for PinoySeoul while actively seeking full-stack developer opportunities where I can contribute technical skills, business thinking, and cultural awareness to innovative teams.</p>
+            
+            <p><strong>What Sets Me Apart:</strong> Most bootcamp graduates have tutorial projects. I have production systems serving 136K+ users. Most junior developers haven't managed infrastructure. I run 7 containerized applications. Most candidates bring code skills. I bring code skills plus proven ability to ship products and serve real users.</p>
+            
+            <p><strong>Looking For:</strong> Full-stack developer positions (entry to junior level) where I can leverage both technical skills and entrepreneurial experience. Particularly interested in roles involving frontend development, DevOps, or full-stack work at startups or companies valuing self-starters who can own projects end-to-end.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h3>📧 Email</h3>
+                <a href="mailto:your-email@example.com">your-email@example.com</a>
+            </div>
+            <div class="contact-item">
+                <h3>💻 GitHub</h3>
+                <a href="https://github.com/subtleazn" target="_blank">github.com/subtleazn</a>
+            </div>
+            <div class="contact-item">
+                <h3>💼 LinkedIn</h3>
+                <a href="#" target="_blank">linkedin.com/in/yourprofile</a>
+            </div>
+            <div class="contact-item">
+                <h3>🌐 Platform</h3>
+                <a href="https://pinoyseoul.com" target="_blank">pinoyseoul.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nash Ang • Full-Stack Developer & Technical Founder</p>
+        <p style="font-size: 0.875rem; margin-top: 0.5rem; color: var(--text-light);">
+            subtleazn.github.io | Available for full-stack developer positions
+        </p>
+    </footer>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nash Ang",
+      "jobTitle": "Full-Stack Developer",
+      "description": "Full-Stack Developer specializing in DevOps, frontend development, and production infrastructure",
+      "url": "https://subtleazn.github.io",
+      "sameAs": [
+        "https://github.com/subtleazn",
+        "https://pinoyseoul.com"
+      ],
+      "knowsAbout": ["JavaScript", "Python", "Docker", "DevOps", "Web Development", "Linux", "Frontend Development"],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "City College of San Francisco"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Bay Valley Tech Code Academy"
+        }
+      ]
+    }
+    </script> 
