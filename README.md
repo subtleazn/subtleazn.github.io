@@ -23,5 +23,11 @@ This is a single-page application built with vanilla HTML, Tailwind CSS, and Jav
 ## How to Use
 
 1. Clone the repository:
-   ```bash
-   git clone [https://github.com/subtleazn/subtleazn.github.io.git](https://github.com/subtleazn/subtleazn.github.io.git)
+    
+        git clone https://github.com/subtleazn/subtleazn.github.io.git
+
+2. Open `index.html` in your web browser to view the website locally.
+
+## Contributing
+
+This is a personal portfolio, so I'm not actively seeking contributions. However, if you have any suggestions or feedback, feel free to open an issue.
