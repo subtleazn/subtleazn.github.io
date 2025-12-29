@@ -1,0 +1,41 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.html' # Only run when HTML files change
+
+permissions:
+  contents: write
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    name: Generate Sitemap
+    
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 
+
+    - name: Generate Sitemap
+      id: sitemap
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: 'https://nash.is-a.dev' # CHANGE THIS to your actual domain
+        drop-html-extension: true # Makes links clean (e.g., /about instead of /about.html)
+        include-date: true
+
+    - name: Commit and Push
+      run: |
+        if [[ `git status --porcelain sitemap.xml` ]]; then
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add sitemap.xml
+          git commit -m "Auto-generated sitemap.xml"
+          git push
+        else
+          echo "No changes to sitemap."
+        fi
